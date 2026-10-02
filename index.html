@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>DRIFT NFA — The Automata Maze</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars"></div>
+<div id="app">
+  <header class="topbar">
+    <button class="ghost" id="backBtn">← <span>BACK</span></button>
+    <div class="brand"><b>DRIFT</b></strong><small>NFA THE AUTOMATA MAZE</small></div>
+    <div class="topstats"><span id="levelBadge">LEVEL 01</span><span id="lives">♥ ♥ ♥</span></div>
+  </header>
+
+  <main id="home" class="screen active">
+    <section class="hero-card blob">
+      <div class="hero-copy"><span class="eyebrow">EXPLORE NON-DETERMINISTIC MACHINES</span><h1>DRIFT<br><em>NFA</em></h1><p>Navigate through states, follow transitions and discover how one input can create multiple possible paths.</p><div class="actions"><button class="primary" id="playBtn">PLAY <span>→</span></button><button class="secondary" id="howBtn">HOW IT WORKS</button></div></div>
+      <div class="orbit-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="node n1">q0</div><div class="node n2">q1</div><div class="node n3">q2</div><div class="node n4">q3</div><div class="spark">✦</div></div>
+    </section>
+    <section class="levels"><div class="section-title"><div><span>YOUR JOURNEY</span><h2>Choose a level</h2></div><span class="progress-pill" id="homeProgress">0 / 5</span></div><div class="level-grid" id="levelCards"></div></section>
+  </main>
+
+  <main id="game" class="screen">
+    <section class="game-layout">
+      <div class="game-board card">
+        <div class="board-head"><div><span class="eyebrow" id="levelName">NFA BASICS</span><h2 id="missionTitle">Reach the exit</h2><span class="automaton-id" id="automatonId">AUTOMATON #000</span></div><button class="icon-btn" id="resetBtn" title="New Game">↻</button></div>
+        <div id="graph" class="graph"></div>
+        <div class="board-foot"><div class="mini-stat"><small>STEP</small><b id="stepCount">0</b></div><div class="mini-stat"><small>NODES</small><b id="nodesExplored">0</b></div><div class="mini-stat"><small>PATHS</small><b id="pathsCount">0</b></div><div class="concept"><small>CONCEPT USED</small><b id="concept">States & transitions</b></div></div>
+      </div>
+      <aside class="side-panel">
+        <div class="card input-card"><div class="card-title"><span>INPUT STRING</span><b id="inputPreview">—</b></div><div class="string-display" id="stringDisplay">ENTER 0 / 1 / A / B</div><div class="keypad"><button data-symbol="0">0</button><button data-symbol="1">1</button><button data-symbol="a">A</button><button data-symbol="b">B</button><button id="clearBtn" class="muted">CLEAR</button><button id="backspaceBtn" class="muted">⌫</button><button id="startBtn" class="primary">START</button></div></div>
+        <div class="card status-card"><div class="card-title"><span>AUTOMATA STATUS</span><span class="live-dot">● LIVE</span></div><div class="status-grid"><div><small>Current symbol</small><b id="currentSymbol">—</b></div><div><small>Active states</small><b id="activeStates">{q0}</b></div><div><small>Result</small><b id="statusText">READY</b></div><div><small>Score</small><b id="score">0</b></div></div><div class="possible-state-note" id="possibleStates">1 ACTIVE STATE</div><div class="trace"><small>PATH TRACE</small><div id="pathTrace"><span class="trace-muted">Waiting for simulation…</span></div></div></div>
+        <div class="card info-card" id="infoCard"><button class="close" id="closeInfo">×</button><span class="eyebrow">WHAT'S HAPPENING?</span><p id="infoText">An NFA can keep multiple possible states active at the same time. Your input decides which transitions are explored.</p></div>
+        <div class="sim-controls"><button id="nextBtn" class="secondary" disabled>NEXT STEP</button><button id="autoBtn" class="secondary" disabled>AUTO PLAY</button></div>
+      </aside>
+    </section>
+  </main>
+
+  <nav class="bottom-nav"><button data-nav="home">⌂<span>HOME</span></button><button data-nav="game">◉<span>MAZE</span></button><button data-nav="levels">▦<span>LEVELS</span></button><button id="infoNav">ⓘ<span>INFO</span></button></nav>
+</div>
+<div id="modal" class="modal"><div class="modal-card"><button class="close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
