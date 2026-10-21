@@ -1,3 +1,8 @@
+GitHub repo link: https://github.com/Manasa95307/Flat_Microproject_Drift.git
+
+Deployment Link: https://drift-indol-eight.vercel.app/
+
+
 NEBULA NFA — THE AUTOMATA MAZE
 
 A complete college microproject built with only HTML, CSS and vanilla JavaScript.
